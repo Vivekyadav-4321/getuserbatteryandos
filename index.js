@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
-const { Server } = require("socket.io");
+const {Server, Socket} = require("socket.io")
 const io = new Server(server);
 const db  = require("mongoose")
-const port = 5000 || process.env.PORT
+const PORT = process.env.PORT ||5000;
 db.connect("mongodb+srv://vievkyadav:guluthegreat@cluster0.tswwn.mongodb.net/users?retryWrites=true&w=majority").then((dbm)=>{console.log("connected to database");})
 
 const schema = db.Schema({
@@ -33,7 +33,7 @@ new users({battery: userinfo.userbattery, useros: userinfo.useros, username: use
 
 
 
-server.listen(port,()=>{console.log("server is live");})
+server.listen(PORT,()=>{console.log("server is live");})
 
 
 
