@@ -6,7 +6,7 @@ const {Server, Socket} = require("socket.io")
 const io = new Server(server);
 const db  = require("mongoose")
 const PORT = process.env.PORT ||5000;
-db.connect("mongodb+srv://vievkyadav:guluthegreat@cluster0.tswwn.mongodb.net/users?retryWrites=true&w=majority").then((dbm)=>{console.log("connected to database");})
+db.connect("mongodb+srv://vievkyadav:guluthegreat@cluster0.tswwn.mongodb.net/users?retryWrites=true&w=majority")
 
 const schema = db.Schema({
     username: String,
