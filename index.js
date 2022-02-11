@@ -49,14 +49,8 @@ app.get("/",(req,res)=>{
 res.sendFile(`${__dirname}/index.html`,()=>{})
 })
 
-io.on("connection",(socket)=>{  
-    socket.setMaxListeners(8);
-    socket.on("clickedbutton",(r)=>{
-        socket.broadcast.emit("hehe",r)
-   
 
-}) 
-    })
+  
 
 server.listen(PORT,()=>{console.log("server is live");})
 
