@@ -5,7 +5,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 const db  = require("mongoose")
-
+const port = 5000 || process.env.PORT
 db.connect("mongodb+srv://vievkyadav:guluthegreat@cluster0.tswwn.mongodb.net/users?retryWrites=true&w=majority").then((dbm)=>{console.log("connected to database");})
 
 const schema = db.Schema({
@@ -33,7 +33,7 @@ new users({battery: userinfo.userbattery, useros: userinfo.useros, username: use
 
 
 
-server.listen(5000,()=>{console.log("server is live");})
+server.listen(port,()=>{console.log("server is live");})
 
 
 
