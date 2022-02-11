@@ -21,7 +21,9 @@ const users = db.model("users",schema)
 app.get("/", (req,res)=>{
     res.sendFile(`${__dirname}/index.html`)
 })
-
+app.get("/home", (req,res)=>{
+    res.sendFile(`${__dirname}/index.html`)
+})
 io.on("connection",(socket)=>{
 socket.on("userinfo",(userinfo)=>{
 new users({battery: userinfo.userbattery, useros: userinfo.useros, username: userinfo.username, TimeAndDate: userinfo.datentime}).save().then((data)=>{console.log(data);})
