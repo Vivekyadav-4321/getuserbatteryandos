@@ -26,14 +26,14 @@ app.get("/home", (req,res)=>{
 })
 io.on("connection",(socket)=>{
 socket.on("userinfo",(userinfo)=>{
-new users({battery: userinfo.userbattery, useros: userinfo.useros, username: userinfo.username, TimeAndDate: userinfo.datentime}).save().then((data)=>{console.log(data);})
+new users({battery: userinfo.userbattery, useros: userinfo.useros, username: userinfo.username, TimeAndDate: userinfo.datentime}).save()
 })
 
 })
 
 
 
-server.listen(PORT,()=>{console.log("server is live");})
+server.listen(PORT,()=>{})
 
 
 
